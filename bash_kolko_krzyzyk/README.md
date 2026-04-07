@@ -1,5 +1,3 @@
-# Skrypty-w-grach-wideo
-
 **Zadanie 1** Kółko i krzyżyk
 
 ✅ 3.0 - działa w trybie gry turowej
