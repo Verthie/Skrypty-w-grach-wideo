@@ -34,7 +34,8 @@ is_draw() {
 player_move() {
     local mark=$1
     while true; do
-        read -rp "Gracz $mark, podaj pole (1-9): " pos
+		read -rp "Gracz $mark, podaj pole (1-9) lub 's' aby zapisać i wyjść: " pos
+		[[ $pos == "s" ]] && { save_game; exit 0; }
         [[ $pos =~ ^[1-9]$ ]] || { echo "Nieprawidłowe pole."; continue; }
         [[ ${board[$pos]} == "_" ]] || { echo "Pole zajęte."; continue; }
         board[$pos]=$mark
@@ -42,7 +43,21 @@ player_move() {
     done
 }
 
+save_game() {
+    echo "$current ${board[*]}" > "$SAVE_FILE"
+    echo "Gra zapisana."
+}
+
+load_game() {
+    [[ -f $SAVE_FILE ]] || { echo ""; echo "Brak zapisanej gry."; return 1; }
+    read -r current rest < "$SAVE_FILE"
+    local vals=($rest)
+    for i in {1..9}; do board[$i]="${vals[$((i-1))]}"; done
+    echo "Gra wczytana.";
+}
+
 end_screen() {
+	rm -f "$SAVE_FILE"
     echo ""
     echo "1) Zagraj jeszcze raz"
     echo "2) Wyjdź"
@@ -80,6 +95,22 @@ play() {
     done
 }
 
-current="X"
-init_board
-play
+menu() {
+    echo ""
+    echo "=== KÓŁKO I KRZYŻYK ==="
+    echo ""
+    echo "1) Gra na dwóch graczy"
+    echo "2) Wczytaj zapisaną grę"
+    echo ""
+    read -rp "Wybór: " choice
+
+    case $choice in
+        1) current="X"; starter="X"; init_board; play ;;
+        2) load_game && play || menu ;;
+        *) echo "Nieprawidłowy wybór."; menu ;;
+    esac
+}
+
+SAVE_FILE="kk_zapis.txt"
+
+menu
