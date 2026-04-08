@@ -8,4 +8,6 @@
 
 ✅ 5.0 - pozwala na grę z komputerem [Commit 66fb54f](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/66fb54f2706f0714331c928d80425245f647fe00)
 
-Kod: [Link do zadania 1](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/bash_kolko_krzyzyk)
+Kod: [Link do zadania 1](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/main/bash_kolko_krzyzyk/kolko_krzyzyk.sh)
+
+<video width="630" height="300" src="https://github.com/user-attachments/assets/021767f8-4a72-44bf-a55f-23491492e870"></video>
