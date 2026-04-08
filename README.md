@@ -10,4 +10,4 @@
 
 Kod: [Link do zadania 1](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/main/bash_kolko_krzyzyk/kolko_krzyzyk.sh)
 
-<video width="630" height="300" src="https://github.com/user-attachments/assets/021767f8-4a72-44bf-a55f-23491492e870"></video>
+https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
