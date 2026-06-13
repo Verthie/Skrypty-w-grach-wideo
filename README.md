@@ -14,9 +14,9 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
 **Zadanie 2** Zamek w Minecraft
 
-✅ 3.0 Prosty zamek wykorzystując minimum 5 różnych rodzajów bloków
+✅ 3.0 Prosty zamek wykorzystując minimum 5 różnych rodzajów bloków [Commit 79590cd](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/79590cdbbf42cad7215c9b1f702c2e9f25905029)
 
-❌ 3.5 Posiada mimum 4 okna
+✅ 3.5 Posiada mimum 4 okna
 
 ❌ 4.0 Posiada fosę oraz most
 
@@ -24,6 +24,8 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
 ❌ 5.0 Zamek ma minimum dwa poziomy (piętra) na które można wejść z
 zewnątrz
+
+Kod: [Link do zadania 2](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/main/javascript_minecraft_zamek)
 
 **Zadanie 3** Crawler w Ruby
 
