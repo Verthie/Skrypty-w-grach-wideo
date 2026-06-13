@@ -10,7 +10,7 @@ MAX_PAGES = 1 # ile stron kategorii pobrać (0 = wszystkie)
 DELAY_SEC = 1.5 # opóźnienie między żądaniami
 OUTPUT_FILE_3 = "produkty3_0.json"  # wyniki kategorii
 OUTPUT_FILE_35 = "produkty3_5.json" # wyniki wyszukiwania
-
+OUTPUT_FILE_4 = "produkty4_0.json"  # szczegółowe dane produktów
 
 HEADERS = {
   "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " \
@@ -159,6 +159,107 @@ def crawl_search(keyword, max_pages: MAX_PAGES)
   all_products
 end
 
+def parse_product_urls(html)
+  doc = Nokogiri::HTML(html)
+  doc.css(".cat-product, .c-product").filter_map do |item|
+    node = item.at_css(".cat-product-name a, .c-product__name a, a.cat-product-name")
+    next unless node&.text&.strip&.length&.positive?
+    href = node["href"]
+    next unless href
+    href.start_with?("http") ? href : "#{BASE_URL}#{href}"
+  end
+end
+
+def parse_product_details(html)
+  doc = Nokogiri::HTML(html)
+ 
+  # morele osadza obiekt Product w <script type="application/ld+json">
+  json_ld = {}
+  doc.css('script[type="application/ld+json"]').each do |script|
+    begin
+      data = JSON.parse(script.text)
+      json_ld = data if data["@type"] == "Product"
+    rescue JSON::ParserError
+    end
+  end
+ 
+  # dane z JSON-LD
+  brand = json_ld.dig("brand", "name")
+  rating = json_ld.dig("aggregateRating", "ratingValue")
+  review_count = json_ld.dig("aggregateRating", "reviewCount")
+
+  {
+    brand: brand,
+    rating: rating,
+    review_count: review_count,
+  }
+end
+
+def crawl_category_urls
+  all_urls = []
+  page = 1
+  path = "#{CATEGORY_PATH}/1/"
+ 
+  loop do
+    url = "#{BASE_URL}#{path}"
+    puts "[URL-e | strona #{page}] Pobieranie: #{url}"
+ 
+    begin
+      html = fetch(url)
+      urls = parse_product_urls(html)
+      puts "znaleziono #{urls.size} URL-i"
+      all_urls.concat(urls)
+    rescue => e
+      puts "BŁĄD: #{e.message} – pomijam stronę"
+      break
+    end
+ 
+    break if MAX_PAGES && page >= MAX_PAGES
+ 
+    next_path = next_page_path(html, page)
+    break unless next_path
+ 
+    path = next_path.start_with?("http") ? URI.parse(next_path).path : next_path
+    page += 1
+    sleep(DELAY_SEC)
+  end
+ 
+  all_urls
+end
+
+
+def enrich_with_details(products, urls)
+  enriched = []
+  total = products.size
+ 
+  products.each_with_index do |prod, idx|
+    url = urls[idx]
+ 
+    if url.nil? || url.empty?
+      puts "[#{idx + 1}/#{total}] brak URL – pomijam"
+      enriched << prod
+      next
+    end
+ 
+    puts "[#{idx + 1}/#{total}] #{prod[:title]&.slice(0, 55)}"
+ 
+    begin
+      html = fetch(url)
+      details = parse_product_details(html)
+      enriched << prod.merge(details)
+    rescue => e
+      puts "BŁĄD: #{e.message}"
+      enriched << prod
+    end
+ 
+    sleep(DELAY_SEC)
+  end
+ 
+  enriched
+end
+
+
+
 # main
 
 # 3.0 produkty z kategorii
@@ -167,6 +268,7 @@ products = crawl_category
 puts products
 
 # 3.5 produkty z słów kluczów
+puts "\n[WYSZUKIWANIE]"
 KEYWORDS = [
   "laptop",
   "fotel gamingowy"
@@ -174,15 +276,22 @@ KEYWORDS = [
  
 keyword_products = []
  
-puts "\n[WYSZUKIWANIE]"
 KEYWORDS.each do |kw|
   results = crawl_search(kw, max_pages: MAX_PAGES)
   keyword_products.concat(results)
   sleep(DELAY_SEC)
 end
 
+# 4.0 szczegóły produktów
+puts "\n[SZCZEGÓŁY PRODUKTÓW]"
+product_urls = crawl_category_urls
+detailed_products = enrich_with_details(products, product_urls)
+
+
+
 # zapis do json
 File.write(OUTPUT_FILE_3, JSON.pretty_generate(products), encoding: "utf-8")
 File.write(OUTPUT_FILE_35, JSON.pretty_generate(keyword_products), encoding: "utf-8")
+File.write(OUTPUT_FILE_4, JSON.pretty_generate(detailed_products), encoding: "utf-8")
 
-puts "\nZapisano do plików: #{OUTPUT_FILE_3}, #{OUTPUT_FILE_35}"
+puts "\nZapisano do plików: #{OUTPUT_FILE_3}, #{OUTPUT_FILE_35}, #{OUTPUT_FILE_4}"
