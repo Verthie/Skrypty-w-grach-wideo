@@ -14,9 +14,9 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
 **Zadanie 3** Crawler w Ruby
 
-✅ 3.0 Należy pobrać podstawowe dane o produktach (tytuł, cena), dowolna kategoria
+✅ 3.0 Należy pobrać podstawowe dane o produktach (tytuł, cena), dowolna kategoria [Commit 74dcc58](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/74dcc58d21150336c46f1cbed7172009e069e0c2)
 
-❌ 3.5 Należy pobrać podstawowe dane o produktach wg słów kluczowych
+✅ 3.5 Należy pobrać podstawowe dane o produktach wg słów kluczowych
 
 ❌ 4.0 Należy rozszerzyć dane o produktach o dane szczegółowe widoczne tylko na podstronie o produkcie
 

@@ -8,7 +8,9 @@ BASE_URL = "https://www.morele.net"
 CATEGORY_PATH = "/kategoria/fotele-gamingowe-747"
 MAX_PAGES = 1 # ile stron kategorii pobrać (0 = wszystkie)
 DELAY_SEC = 1.5 # opóźnienie między żądaniami
-OUTPUT_FILE = "produkty3_0.json"
+OUTPUT_FILE_3 = "produkty3_0.json"  # wyniki kategorii
+OUTPUT_FILE_35 = "produkty3_5.json" # wyniki wyszukiwania
+
 
 HEADERS = {
   "User-Agent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " \
@@ -65,6 +67,10 @@ def parse_product_list(html)
     price_text = price_el&.[]("data-price")
     price_text = "#{price_text} zł" if price_text
 
+    if price_text.nil? || price_text.empty?
+      price_text = item.at_css(".price-new")&.text&.strip
+    end
+
     next if title.nil? || title.empty?
 
     products << {
@@ -119,11 +125,64 @@ def crawl_category
   all_products
 end
 
+def crawl_search(keyword, max_pages: MAX_PAGES)
+  all_products = []
+  page = 1
+  encoded = URI.encode_www_form_component(keyword)
+  url = "#{BASE_URL}/wyszukiwarka/?q=#{encoded}&p=1"
+ 
+  loop do
+    puts "[szukaj: \"#{keyword}\" | strona #{page}] #{url}"
+ 
+    begin
+      html = fetch(url)
+      products = parse_product_list(html)
+      puts "#{products.size} produktów"
+      all_products.concat(products)
+    rescue => e
+      puts "BŁĄD: #{e.message} – pomijam stronę"
+      break
+    end
+ 
+    break if max_pages && page >= max_pages
+ 
+    next_url = next_page_path(html, page)
+    break unless next_url
+ 
+    url = next_url.start_with?("http") ? next_url : "#{BASE_URL}#{next_url}"
+    page += 1
+    sleep(DELAY_SEC)
+  end
+ 
+  # oznacz skąd pochodzi produkt
+  all_products.each { |p| p[:keyword] = "#{keyword}" }
+  all_products
+end
+
 # main
+
+# 3.0 produkty z kategorii
+puts "\n[KATEGORIA]"
 products = crawl_category
 puts products
 
-# zapis do json
-File.write(OUTPUT_FILE, JSON.pretty_generate(products), encoding: "utf-8")
+# 3.5 produkty z słów kluczów
+KEYWORDS = [
+  "laptop",
+  "fotel gamingowy"
+].freeze
+ 
+keyword_products = []
+ 
+puts "\n[WYSZUKIWANIE]"
+KEYWORDS.each do |kw|
+  results = crawl_search(kw, max_pages: MAX_PAGES)
+  keyword_products.concat(results)
+  sleep(DELAY_SEC)
+end
 
-puts "\nZapisano #{products.size} produktów do pliku: #{OUTPUT_FILE}"
+# zapis do json
+File.write(OUTPUT_FILE_3, JSON.pretty_generate(products), encoding: "utf-8")
+File.write(OUTPUT_FILE_35, JSON.pretty_generate(keyword_products), encoding: "utf-8")
+
+puts "\nZapisano do plików: #{OUTPUT_FILE_3}, #{OUTPUT_FILE_35}"
