@@ -12,6 +12,19 @@ Kod: [Link do zadania 1](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/m
 
 https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
+**Zadanie 2** Zamek w Minecraft
+
+✅ 3.0 Prosty zamek wykorzystując minimum 5 różnych rodzajów bloków
+
+❌ 3.5 Posiada mimum 4 okna
+
+❌ 4.0 Posiada fosę oraz most
+
+❌ 4.5 Posiada bramę oraz minimum 2 wieże
+
+❌ 5.0 Zamek ma minimum dwa poziomy (piętra) na które można wejść z
+zewnątrz
+
 **Zadanie 3** Crawler w Ruby
 
 ✅ 3.0 Należy pobrać podstawowe dane o produktach (tytuł, cena), dowolna kategoria [Commit 74dcc58](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/74dcc58d21150336c46f1cbed7172009e069e0c2)
