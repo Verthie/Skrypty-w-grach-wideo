@@ -27,6 +27,8 @@ zewnątrz
 
 Kod: [Link do zadania 2](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/main/javascript_minecraft_zamek)
 
+https://github.com/user-attachments/assets/477f715d-ce24-4af6-8a5e-26a5f7cb7644
+
 **Zadanie 3** Crawler w Ruby
 
 ✅ 3.0 Należy pobrać podstawowe dane o produktach (tytuł, cena), dowolna kategoria [Commit 74dcc58](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/74dcc58d21150336c46f1cbed7172009e069e0c2)
