@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
 ✅ 3.5 Należy pobrać podstawowe dane o produktach wg słów kluczowych [Commit 5085cec](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/5085cec9e7c5295ac54e7c81b188f18ced6f6ebd)
 
-✅ 4.0 Należy rozszerzyć dane o produktach o dane szczegółowe widoczne tylko na podstronie o produkcie
+✅ 4.0 Należy rozszerzyć dane o produktach o dane szczegółowe widoczne tylko na podstronie o produkcie [Commit 273ebed](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/273ebeddedf8bbf1bf33d76979c282270cd2404e)
 
 ❌ 4.5 Należy zapisać linki do produktów
 
