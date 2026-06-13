@@ -11,3 +11,17 @@
 Kod: [Link do zadania 1](https://github.com/Verthie/Skrypty-w-grach-wideo/blob/main/bash_kolko_krzyzyk/kolko_krzyzyk.sh)
 
 https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
+
+**Zadanie 3** Crawler w Ruby
+
+✅ 3.0 Należy pobrać podstawowe dane o produktach (tytuł, cena), dowolna kategoria
+
+❌ 3.5 Należy pobrać podstawowe dane o produktach wg słów kluczowych
+
+❌ 4.0 Należy rozszerzyć dane o produktach o dane szczegółowe widoczne tylko na podstronie o produkcie
+
+❌ 4.5 Należy zapisać linki do produktów
+
+❌ 5.0 Dane należy zapisać w bazie danych np. SQLite via Sequel
+
+Kod: [Link do zadania 3](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/ruby_crawler)
