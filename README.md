@@ -25,3 +25,5 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 ❌ 5.0 Dane należy zapisać w bazie danych np. SQLite via Sequel
 
 Kod: [Link do zadania 3](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/ruby_crawler)
+
+https://github.com/user-attachments/assets/05f2d9a7-f1c8-4183-82f2-a545e1076428
