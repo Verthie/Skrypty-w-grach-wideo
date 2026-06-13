@@ -16,9 +16,9 @@ https://github.com/user-attachments/assets/126a0af1-2366-458f-a19f-8dcf7802ecee
 
 ✅ 3.0 Prosty zamek wykorzystując minimum 5 różnych rodzajów bloków [Commit 79590cd](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/79590cdbbf42cad7215c9b1f702c2e9f25905029)
 
-✅ 3.5 Posiada mimum 4 okna
+✅ 3.5 Posiada mimum 4 okna [Commit f6150c5](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/f6150c5801113213b86acbe9ef8b4a34eb96831e)
 
-❌ 4.0 Posiada fosę oraz most
+✅ 4.0 Posiada fosę oraz most
 
 ❌ 4.5 Posiada bramę oraz minimum 2 wieże
 
