@@ -44,3 +44,18 @@ https://github.com/user-attachments/assets/477f715d-ce24-4af6-8a5e-26a5f7cb7644
 Kod: [Link do zadania 3](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/ruby_crawler)
 
 https://github.com/user-attachments/assets/05f2d9a7-f1c8-4183-82f2-a545e1076428
+
+**Zadanie 4** Tetris w Lua
+
+✅ 3.0 Postawowa wersja dekstopowa z obsługą na klawiaturze - minimum 4
+rodzaje klocków
+
+❌ 3.5 Zapis i odczyt gier
+
+❌ 4.0 Dodanie efektów dźwiękowych przy akcjach
+
+❌ 4.5 Dodanie animacji przy zbijaniu klocków
+
+❌ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury
+
+Kod: [Link do zadania 4](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/lua_tetris)
