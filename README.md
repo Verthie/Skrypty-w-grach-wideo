@@ -58,3 +58,5 @@ https://github.com/user-attachments/assets/05f2d9a7-f1c8-4183-82f2-a545e1076428
 ❌ 5.0 Wersja na iOS lub Android z implementacją touch zamiast klawiatury
 
 Kod: [Link do zadania 4](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/lua_tetris)
+
+https://github.com/user-attachments/assets/b5e407f5-75f2-40d5-bf2e-bf5e27e8bc61
