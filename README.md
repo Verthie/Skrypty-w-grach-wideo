@@ -47,8 +47,7 @@ https://github.com/user-attachments/assets/05f2d9a7-f1c8-4183-82f2-a545e1076428
 
 **Zadanie 4** Tetris w Lua
 
-✅ 3.0 Postawowa wersja dekstopowa z obsługą na klawiaturze - minimum 4
-rodzaje klocków
+✅ 3.0 Postawowa wersja dekstopowa z obsługą na klawiaturze - minimum 4 rodzaje klocków [Commit a6d60da](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/a6d60da8ba3bd07486d85d3d0f5a7b34d9ade001)
 
 ❌ 3.5 Zapis i odczyt gier
 
