@@ -60,3 +60,17 @@ https://github.com/user-attachments/assets/05f2d9a7-f1c8-4183-82f2-a545e1076428
 Kod: [Link do zadania 4](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/lua_tetris)
 
 https://github.com/user-attachments/assets/b5e407f5-75f2-40d5-bf2e-bf5e27e8bc61
+
+**Zadanie 5** Chatbot w python
+
+✅ 3.0 Czatbot z wytrenowaną umiejętnością (poprzez prompt) obsługi co najmniej 3 sposobów sformułowania intencji (powitanie, menu, zamówienie). [Commit fe130a9](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/fe130a9187a0b40011a04b227c32b32059cba7bf)
+
+❌ 3.5 Informacje o godzinach otwarcia i pozycjach w menu powinny być pobierane z pliku konfiguracyjnego (JSON/YAML) i przekazywane do modelu.
+
+❌ 4.0 Czatbot musi przetworzyć zamówienie i potwierdzić zakupione posiłki, a także obsłużyć dodatkowe prośby (np. alergie, modyfikacje dań). Dane o alergiach, składzie, daniach ładowy z api aplikacji webowej napisanej we Flasku (https://flask.palletsprojects.com/en/stable/).
+
+❌ 4.5 Czatbot musi potwierdzić, kiedy posiłek będzie dostępny do odbioru w restauracji (estymacja czasu na podstawie zamówienia).
+
+❌ 5.0 Czatbot powinien zapytać o adres dostawy i potwierdzić go, zamiast opcji odbioru osobistego, weryfikując kompletność danych adresowych. Zapisać zamówienie przez wywołanie api aplikacji we Flasku. We Flasku zapisujemy dane zamówienia w bazie.
+
+Kod: [Link do zadania 5](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/python_llm)
