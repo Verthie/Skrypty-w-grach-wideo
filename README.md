@@ -63,7 +63,7 @@ https://github.com/user-attachments/assets/b5e407f5-75f2-40d5-bf2e-bf5e27e8bc61
 
 **Zadanie 5** Chatbot w python
 
-✅ 3.0 Czatbot z wytrenowaną umiejętnością (poprzez prompt) obsługi co najmniej 3 sposobów sformułowania intencji (powitanie, menu, zamówienie). [Commit fe130a9](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/fe130a9187a0b40011a04b227c32b32059cba7bf)
+✅ 3.0 Czatbot z wytrenowaną umiejętnością (poprzez prompt) obsługi co najmniej 3 sposobów sformułowania intencji (powitanie, menu, zamówienie). [Commit 33c96a7](https://github.com/Verthie/Skrypty-w-grach-wideo/commit/33c96a7d11b5d2c55e142a6c60fc932587e92f90)
 
 ❌ 3.5 Informacje o godzinach otwarcia i pozycjach w menu powinny być pobierane z pliku konfiguracyjnego (JSON/YAML) i przekazywane do modelu.
 
