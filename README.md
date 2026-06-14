@@ -74,3 +74,5 @@ https://github.com/user-attachments/assets/b5e407f5-75f2-40d5-bf2e-bf5e27e8bc61
 ❌ 5.0 Czatbot powinien zapytać o adres dostawy i potwierdzić go, zamiast opcji odbioru osobistego, weryfikując kompletność danych adresowych. Zapisać zamówienie przez wywołanie api aplikacji we Flasku. We Flasku zapisujemy dane zamówienia w bazie.
 
 Kod: [Link do zadania 5](https://github.com/Verthie/Skrypty-w-grach-wideo/tree/main/python_llm)
+
+https://github.com/user-attachments/assets/51d29c51-e3de-4b96-8bec-87085d95a08b
